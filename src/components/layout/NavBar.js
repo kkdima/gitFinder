@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import icon from "./github-brands.svg";
+import icon from './github-brands.svg';
 
 const NavBar = ({title}) => {
 	return (
