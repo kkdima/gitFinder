@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const UserItem = ({ user: { username, avatar_url, website } }) => {
+const UserItem = ({ user: { username, avatar_url, url } }) => {
 	return (
 		<div className="card text-center">
 			<img
@@ -12,7 +12,7 @@ const UserItem = ({ user: { username, avatar_url, website } }) => {
 			/>
 			<h3>{username}</h3>
 			<div>
-				<a href={website} className="btn btn-dark btn-sm my-1">
+				<a href={url} className="btn btn-dark btn-sm my-1">
 					More
 				</a>
 			</div>
