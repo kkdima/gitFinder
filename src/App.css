@@ -48,6 +48,17 @@ img {
   padding: 0 2rem;
 }
 
+/* my styles */
+.icon {
+  width: 30px;
+  width: 30px;
+  fill: white;
+  /* padding-top: 25px; */
+  /* margin-right: 15px;
+  position: relative;
+  transform: translateY(6px) */
+}
+
 /* Text Styles*/
 .x-large {
   font-size: 4rem;
@@ -347,9 +358,6 @@ table th {
 }
 
 /* Navbar */
-.fab {
-  background-image: url('/public/github-brands.svg')
-}
 .navbar {
   display: flex;
   justify-content: space-between;
