@@ -72,6 +72,7 @@ class App extends Component {
 											showClear={this.state.users.length > 0 ? true : false}
 											setAlert={this.setAlert}
 										/>
+										<Users loading={this.state.loading} users={this.state.users} />
 									</Fragment>
 								)}
 							/>
@@ -89,7 +90,6 @@ class App extends Component {
 								)}
 							/>
 						</Switch>
-						<Users loading={this.state.loading} users={this.state.users} />
 					</div>
 				</div>
 			</Router>

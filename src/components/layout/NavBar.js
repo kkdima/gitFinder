@@ -1,13 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import icon from './github-brands.svg';
 import { Link } from 'react-router-dom';
 
-const NavBar = ({title}) => {
+const NavBar = ({title, icon}) => {
 	return (
 		<nav className="navbar bg-primary">
-            <img src={icon} alt="" className="icon" />
-			<h1 className="fab fa-github header">
+			<h1>
+				<i className={icon}/>
 				{title}
 			</h1>
 			<ul>
@@ -24,6 +23,7 @@ const NavBar = ({title}) => {
 
 NavBar.defaultProps = {
 	title: "GitHub Finder",
+	icon: "fab fa-github mx-1"
 };
 
 NavBar.propTypes = {

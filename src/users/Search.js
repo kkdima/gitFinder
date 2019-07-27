@@ -39,7 +39,7 @@ class Search extends Component {
 					<input
 						type="submit"
 						name="Search"
-						className="brn btn-dark btn-block"
+						className="btn btn-dark btn-block"
 					/>
 				</form>
 				{this.props.showClear &&(
