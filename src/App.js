@@ -2,9 +2,9 @@ import "./App.css";
 import axios from "axios";
 import React, { Component, Fragment } from "react";
 import Navbar from "./components/layout/NavBar";
-import Users from "./users/Users";
-import User from "./users/User";
-import Search from "./users/Search";
+import Users from "./components/users/Users";
+import User from "./components/users/User";
+import Search from "./components/users/Search";
 import Alert from "./components/layout/Alert";
 import About from "./components/pages/About";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -12,9 +12,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 class App extends Component {
 	state = {
 		users: [],
+		user: {},
+		repos: [],
 		loading: false,
 		alert: null,
-		user: {}
 	};
 
 	// Search github users
@@ -41,6 +42,18 @@ class App extends Component {
 		this.setState({ user: res.data, loading: false });
 	};
 
+	// Get users repos
+	getUserRepos = async username => {
+		this.setState({ loading: true });
+		const res = await axios.get(
+			`https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&client_id=${
+				process.env.REACT_APP_GITHUB_CLIENT_ID
+			}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`
+		);
+
+		this.setState({ repos: res.data, loading: false });
+	};
+
 	// Clear users from the state
 	clearUsers = () => this.setState({ users: [], loading: false });
 
@@ -52,7 +65,7 @@ class App extends Component {
 	};
 
 	render() {
-		const { users, user, loading } = this.state;
+		const { users, repos, user, loading } = this.state;
 
 		return (
 			<Router>
@@ -72,7 +85,7 @@ class App extends Component {
 											showClear={this.state.users.length > 0 ? true : false}
 											setAlert={this.setAlert}
 										/>
-										<Users loading={this.state.loading} users={this.state.users} />
+										<Users loading={loading} users={users} />
 									</Fragment>
 								)}
 							/>
@@ -84,7 +97,9 @@ class App extends Component {
 									<User
 										{...props}
 										getUser={this.getUser}
+										getUserRepos={this.getUserRepos}  
 										user={user}
+										repos={repos}
 										loading={loading}
 									/>
 								)}
