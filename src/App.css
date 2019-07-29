@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+/* @import url('https://fonts.googleapis.com/css?family=Roboto'); */
 
 /* Global Styles */
 :root {
-  --primary-color: #dc3545;
+  --primary-color: linear-gradient(-180deg, #E5E5E5 0%, #F7F7F7 100%);;
   --dark-color: #333333;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
@@ -15,12 +15,22 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: 'Noah-Regular';
+  src: url('./fonts/Noah-Bold.otf');
+}
+@font-face {
+  font-family: 'Noah-Bold';
+  src: url('./fonts/Noah-Regular.otf');
+}
+
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Noah-Regular', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
   color: #333;
+  
 }
 
 a {
@@ -40,13 +50,6 @@ img {
   width: 100%;
 }
 
-@media (max-width: 600px) {
-  .Users {
-    display: flex !important;
-    flex-direction: column;
-    
-  }
-}
 
 /* Utilities */
 .container {
@@ -374,7 +377,7 @@ table th {
   padding: 0.7rem 2rem;
   z-index: 1;
   width: 100%;
-  opacity: 0.9;
+  /* opacity: 0.9; */
   margin-bottom: 1rem;
 }
 
@@ -383,13 +386,13 @@ table th {
 }
 
 .navbar a {
-  color: #fff;
+  /* color: #fff; */
   padding: 0.45rem;
   margin: 0 0.25rem;
 }
 
 .navbar a:hover {
-  color: var(--light-color);
+  /* color: var(--light-color); */
 }
 
 .navbar .welcome span {
@@ -431,4 +434,61 @@ table th {
     text-align: center;
     justify-content: center;
   }
+}
+
+/* CUSTOM STYLES */
+/* CUSTOM STYLES */
+/* CUSTOM STYLES */
+@media (max-width: 525px) {
+  .Users {
+    display: flex !important;
+    flex-direction: column;
+  }
+}
+
+#iconLogo {
+  width: 78px;
+  margin: auto;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  min-width: 119px;
+  height: 147px;
+  background-color: #D8D8D8;
+  border-radius: 7px;
+  padding-top: 19px;
+  padding-bottom: 9px;
+  position: relative;
+  transform: translateY(35px);
+
+  background: #D8D8D8;
+  box-shadow: 0 18px 16px -11px rgba(62,62,62,0.50);
+}
+
+#title {
+  font-family: Noah-Bold !important;
+  font-size: 15px;
+  color: #52566A;
+  text-align: center;
+}
+
+.navBar {
+  height: 126px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 70px;
+
+  /* border: solid black; */
+
+}
+
+.navBar h1:nth-of-type(2) {
+    margin-top: -7px;
+}
+
+ul {
+  color: #52566A !important;
+  font-size: 21px;
 }
