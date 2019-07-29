@@ -133,6 +133,16 @@ img {
   padding: 1rem;
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+@media (min-width: 700px) {
+  .card {
+    flex-direction: row;
+    align-items: space-between;
+    justify-content: space-between;
+  }
 }
 
 /* List */
@@ -253,6 +263,8 @@ img {
 
 .badge {
   /* display: inline-block; */
+  margin: auto;
+  width: 120px;
   font-size: 0.8rem;
   padding: 0.2rem 0.7rem;
   text-align: center;
@@ -502,11 +514,19 @@ ul {
   border: none;
   /* padding-left: 10px; */
 } 
+
+input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+    outline: none;
+}
+
 .inputSearch {
   /* all: unset; */
   -webkit-appearance: none;
   appearance: none;
-  user-select: none;
+  /* user-select: none; */
   background: #F8F8F7;
   border-radius: 6px;
   border: none !important;
@@ -530,6 +550,7 @@ ul {
   margin: auto;
   margin-bottom: 25px;
   border: none;
+  outline: none;
 
   -webkit-appearance: none;
   -moz-appearance: none;
