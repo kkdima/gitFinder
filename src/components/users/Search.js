@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import GithubContext from "../../context/github/githubContext";
 import AlertContext from "../../context/alert/alertContext";
+import { motion } from "framer-motion";
 
 const Search = () => {
 	const githubContext = useContext(GithubContext);
@@ -24,21 +25,30 @@ const Search = () => {
 		<div>
 			<form onSubmit={onSubmit} className='form'>
 				<input
+					className='inputSearch'
 					type='text'
 					name='text'
-					placeholder='Search users...'
+					placeholder='Search users'
 					value={text}
 					onChange={onChange}
 				/>
-				<input type='submit' name='Search' className='btn btn-dark btn-block' />
+				<motion.input 
+					type='submit'
+					name='Search'
+					className='btn btn-dark btn-block submitButton'
+					whileHover={{ scale: 1.1 }}
+					whileTap={{ scale: 0.9, y: "5px" }}
+				/>
 			</form>
 			{githubContext.users.length > 0 && (
-				<button
-					className='btn btn-light btn-block'
+				<motion.button
+					className='btn btn-light btn-block clearButton'
 					onClick={githubContext.clearUsers}
+					whileHover={{ scale: 1.1 }}
+					whileTap={{ scale: 0.9, y: "5px" }}
 				>
 					Clear
-				</button>
+				</motion.button>
 			)}
 		</div>
 	);

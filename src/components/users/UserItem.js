@@ -9,12 +9,12 @@ const UserItem = ({ user: { login, avatar_url, html_url } }) => {
 				src={avatar_url}
 				alt=""
 				className="round-img"
-				style={{ width: "60px" }}
+				style={{ width: "76px" }}
 			/>
-			<h3>{login}</h3>
+			<h3 style={{ fontSize: "21px" }}>@{login}</h3>
 			<div>
-				<Link to={`/user/${login}`} className="btn btn-dark btn-sm my-1">
-					More
+				<Link to={`/user/${login}`} className="btn btn-dark btn-sm my-1 more">
+					more
 				</Link>
 			</div>
 		</div>
