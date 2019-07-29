@@ -500,17 +500,24 @@ ul {
   -webkit-text-fill-color: #868686;
   opacity: 1; /* required on iOS */
   border: none;
-  padding-left: 10px;
+  /* padding-left: 10px; */
 } 
 .inputSearch {
+  /* all: unset; */
+  -webkit-appearance: none;
+  appearance: none;
+  user-select: none;
   background: #F8F8F7;
   border-radius: 6px;
   border: none !important;
-  height: 55px;
+  height: 55px !important;
   font-size: 21px;
-  padding-left: 10px;
-}
-.inputSearch  {
+  padding-left: 30px !important;
+  margin-bottom: 40px;
+  margin-top: 10px;
+
+  font-family: Noah-Bold !important;
+  font-size: 19px;
 }
 
 .submitButton {
@@ -523,6 +530,12 @@ ul {
   margin: auto;
   margin-bottom: 25px;
   border: none;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  user-select:none;
+  -webkit-text-fill-color: #52566A;
 }
 
 .clearButton {
@@ -531,10 +544,15 @@ ul {
   border-radius: 6px;
   color: #52566A;
   max-width: 128px;
-  /* font-size: 21px; */
   margin: auto;
   margin-bottom: 25px;
   border: none;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  user-select:none;
+  -webkit-text-fill-color: #52566A;
 }
 
 /* More button in UserItem */
